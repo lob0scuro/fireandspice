@@ -1,0 +1,157 @@
+:root,
+:root.light {
+  --red: #dc3545;
+  --primary: #da251c;
+  --secondary: #f2ece4;
+  --yellow: #ffc107;
+  --black: #000;
+
+  --main-font: "Luckiest Guy", cursive;
+  --secondary-font: "East Sea Dokdo", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  font-family: var(--main-font);
+  margin: 0;
+  padding: 0;
+}
+
+/*----UTILS----*/
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+}
+
+/*------Header section-------*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 5%;
+  font-size: 2rem;
+  position: relative;
+  z-index: 4;
+  background-image: linear-gradient(var(--secondary), transparent, transparent);
+  position: sticky;
+  top: 0;
+}
+header img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  z-index: 4;
+}
+header > * {
+  z-index: 4;
+  color: var(--secondary);
+}
+
+/*---------------------------*/
+/*-------main section--------*/
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60svh;
+}
+
+/*---------------------------*/
+/*-------landing section--------*/
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  color: var(--secondary);
+}
+.landing > *:not(:last-child) {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 15px;
+}
+
+.landing img {
+  width: 100%;
+  height: 100%;
+  image-rendering: crisp-edges;
+  filter: brightness(0.6);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  max-width: 100%;
+}
+
+.landing .order-btn {
+  font-size: 1.8rem;
+  font-family: var(--secondary-font);
+  box-shadow: -4px 4px 8px -1px var(--black);
+}
+
+/*--------food spotlight---------*/
+.spotlightFood {
+  background-color: var(--black);
+  color: var(--secondary);
+  margin-top: auto;
+}
+
+.food-img-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "photo1 ."
+    ". photo2"
+    "photo3 ."
+    ". photo4"
+    "photo5 .";
+  gap: 2rem;
+}
+
+.food-img {
+  width: 10rem;
+  height: 10rem;
+}
+.food-img:nth-child(1) {
+  grid-area: photo1;
+}
+.food-img:nth-child(2) {
+  grid-area: photo2;
+}
+.food-img:nth-child(3) {
+  grid-area: photo3;
+}
+.food-img:nth-child(4) {
+  grid-area: photo4;
+}
+.food-img:nth-child(5) {
+  grid-area: photo5;
+}
+
+/*-------------------------------*/
+
+/*--------footer section------------*/
+footer {
+  margin-bottom: auto;
+  background-color: var(--secondary);
+  width: 100%;
+  height: 10svh;
+  position: relative;
+  top: 100%;
+  margin-bottom: 0;
+}
