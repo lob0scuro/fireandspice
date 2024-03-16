@@ -15,36 +15,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
-    <title>Document</title>
+    <title>Fire & Spice</title>
   </head>
   <body>
     <header>
-      <i class="fa-solid fa-phone"></i>
+      <i id="call-btn" class="fa-solid fa-phone"></i>
       <img src="images/fslogo.jpg" alt="best crawfish in swla" />
-      <i class="fa-solid fa-bars"></i>
+      <i id="hamburger-btn" class="fa-solid fa-bars"></i>
     </header>
     <main>
       <section id="landing" class="landing">
         <h1 class="text-center">Fire and Spice</h1>
         <p class="text-center">Boil-N-Geaux</p>
-        <button class="btn order-btn">Order Now!</button>
+        <a class="btn order-btn" href="#order-form">Order Now!</a>
         <img src="images/crawbackdrop.jpg" alt="best crawfish in moss bluff" />
       </section>
       <section id="spotlightFood" class="spotlightFood">
         <h2 class="text-center">Taste the thrill,<br />Feel the flavor</h2>
         <div class="food-img-block">
           <img src="images/fshalfsmash.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
           <img src="images/shrimpnburger.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
           <img src="images/validation.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
           <img src="images/crawfish.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
           <img src="images/fsbanner.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
           <img src="images/fsposter.jpg" alt="" class="food-img" />
-          <p class="context">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
+          <p class="context text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eveniet!</p>
         </div>
       </section>
       <section id="validation" class="validation">
@@ -65,12 +65,34 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magnam veniam aspernatur nam fuga doloremque nihil, quam quasi soluta exercitationem blanditiis nemo dolorum tempora aperiam laudantium eveniet nulla, cum eaque saepe velit necessitatibus. Nisi necessitatibus, exercitationem iste accusamus consequatur culpa.
         </p>
       </section>
+      <section id="order-form" class="order-form">
+        <h3 class="text-center">Skip the wait<br>Order Now!</h3>
+        <form action="#">
+          <label for="name">
+            Name 
+          </label><input type="text">
+          <br>
+          <label for="phone">
+            Phone Number
+          </label><input type="tel">
+          <br>
+          <label for="order-content">
+            Order Details
+          </label>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <br>
+          <input class="btn" type="submit" value="Place Order">
+        </form>
+      </section>
       <div class="menu-tag">
         Menu
         <!-- <img src="images/fsmenu.jpg" alt=""> -->
       </div>
       <footer>
         <p>Fire and Spice - Moss Bluff, LA</p>
+        <p>Connect with us!</p>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
       </footer>
     </main>
   </body>

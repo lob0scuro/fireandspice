@@ -38,6 +38,11 @@ body {
   margin: 0 auto;
   border: none;
   border-radius: 20px;
+  font-family: var(--secondary-font);
+  font-size: 1.3rem;
+}
+a {
+  text-decoration: none;
 }
 
 /*------Header section-------*/
@@ -116,12 +121,15 @@ main {
   background-position: center;
   background-color: var(--black);
   color: var(--secondary);
+  border: 2px solid var(--black);
   /* padding: 5% 2%; */
 }
 .spotlightFood h2 {
   background-color: var(--yellow);
+  color: var(--black);
   margin: 0;
   padding: 5% 0;
+  border: 2px solid var(--black);
 }
 
 .food-img-block {
@@ -138,13 +146,19 @@ main {
     ;
   gap: 2rem;
   padding: 50px 2%;
-  place-content: center;
+}
+.food-img-block > p {
+  color: var(--black);
+  background-color: var(--yellow);
+  border-radius: 20px;
+  padding: 2%;
 }
 
 .food-img {
   width: 100%;
   height: auto;
   border: 2px solid var(--primary);
+  border-radius: 15px;
 }
 .context {
   color: var(--yellow);
@@ -211,6 +225,8 @@ main {
 /*--------about us section------------*/
 .about {
   background-color: var(--red);
+  padding: 5% 5%;
+  border: 2px solid var(--black);
 }
 .about h3 {
   font-size: 4rem;
@@ -226,14 +242,36 @@ main {
 
 
 /*-------------------------------*/
+/*--------order form section------------*/
+.order-form {
+  color: var(--yellow);
+  background-color: grey;
+  border: 2px solid var(--black);
+}
+
+.order-form form {
+  /* background-color: var(--black); */
+  color: var(--black);
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1% 1%;
+}
+
+
 
 /*--------Menu tag & footer section------------*/
 footer {
   background-color: var(--black);
   color: var(--secondary);
   width: 100%;
-  height: 10rem;
+  height: 50rem;
   position: unset;
+
 }
 
 .menu-tag {
