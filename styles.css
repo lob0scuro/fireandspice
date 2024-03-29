@@ -50,22 +50,65 @@ a {
 header {
   position: sticky;
   top: 0;
+  z-index: 4;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 5%;
   font-size: 2rem;
-  z-index: 4;
   background-image: linear-gradient(var(--secondary), transparent, transparent);
 }
 header img {
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: auto;
   border-radius: 4rem;
   z-index: 4;
 }
+header button {
+  background-color: transparent;
+  border: none;
+}
+header button i {
+  font-size: 2rem;
+}
+
+.mainMenu {
+  background-color: var(--black);
+  color: var(--secondary);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 18%;
+}
+.mainMenu > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3em;
+}
+.mainMenu > ul > li > a {
+  color: inherit;
+}
+.mainMenu > ul > * {
+  list-style-type: circle;
+  font-size: 3rem;
+}
+.mainMenu > ul > *:hover {
+  color: var(--red);
+  list-style-type: disc;
+  transform: scale(1.1);
+}
+
 header > * {
-  z-index: 4;
   color: var(--secondary);
 }
 
@@ -112,9 +155,10 @@ main {
 }
 
 .landing .order-btn {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-family: var(--secondary-font);
   box-shadow: -4px 4px 8px -1px var(--black);
+  padding: 2rem 1.5rem 2rem 1.5rem;
 }
 
 /*--------food spotlight---------*/
@@ -151,20 +195,25 @@ main {
 }
 .food-img-block > p {
   color: var(--black);
-  background-color: var(--yellow);
+  background-color: #97623ee7;
   border-radius: 20px;
-  padding: 2%;
+  padding: 5%;
+  box-shadow: -4px 4px 10px -1px rgba(0, 0, 0, 0.8);
+  border: 8px outset var(--secondary);
+  /* font-family: var(--secondary-font); */
+  /* font-size: 1.4rem; */
 }
 
 .food-img {
   width: 100%;
   height: auto;
-  border: 2px solid var(--primary);
+  aspect-ratio: 1/1;
+  border: 4px solid var(--black);
   border-radius: 15px;
 }
-.context {
+/* .context {
   color: var(--yellow);
-}
+} */
 .food-img:nth-child(1) {
   grid-area: photo1;
 }
@@ -216,8 +265,9 @@ main {
 .validation h3 {
   background-color: var(--yellow);
   color: var(--black);
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   padding: 10px 0;
+  font-family: var(--secondary-font);
 }
 
 /*-------------------------------*/
@@ -229,35 +279,47 @@ main {
 }
 .about h3 {
   font-size: 4rem;
+  text-decoration: underline 18px var(--black);
 }
 .about h5 {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  color: var(--secondary);
 }
 .about img {
   width: 100%;
   height: auto;
-  border: 2px solid var(--black);
+  border: 2px solid var(--secondary);
+  box-shadow: 0 5px 10px -1px rgba(0, 0, 0, 0.8);
 }
 
 /*-------------------------------*/
 /*--------order form section------------*/
 .order-form {
-  color: var(--yellow);
-  background-color: grey;
-  border: 2px solid var(--black);
+  color: var(--black);
+  background-color: #fff;
+  background-image: url("images/crawdraw.jpg");
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  border: inset 2px solid var(--black);
+}
+.order-form h3 {
+  font-size: 2rem;
+  text-decoration: 4px underline;
 }
 
 .order-form form {
-  /* background-color: var(--black); */
-  color: var(--black);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--yellow);
   width: 75%;
-  margin: 0 auto;
+  margin: 10% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 1% 1%;
+  border-radius: 15px;
 }
 
 /*--------Menu tag & footer section------------*/
@@ -281,15 +343,15 @@ footer span {
 }
 
 /*MENU*/
+#app,
 .menu-tag {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
-  /* gap: 10px; */
   position: fixed;
   right: 0;
   bottom: 8%;
-  /* background-color: var(--red); */
+  background-color: var(--red);
   border-radius: 15px 0 0 15px;
   border: 2px solid var(--black);
   color: var(--secondary);
@@ -298,40 +360,19 @@ footer span {
 
   box-shadow: -3px 3px 8px -1px var(--black);
 }
-.menu-btn {
-  font-size: 1.5rem;
+#app > .menuTag > .menu-btn {
+  font-size: 1.8rem;
   font-weight: 900;
   background: var(--red);
   border: none;
   color: var(--yellow);
   font-family: var(--secondary-font);
   border-radius: 15px 0 0 15px;
-  /* display: none; */
-}
-.menu-close-btn {
-  font-size: 1.1rem;
-  z-index: 5;
-  color: black;
-  position: absolute;
-  left: 3%;
-  top: 1%;
-  display: none;
-}
-.menu-img {
-  background-image: url("images/fsmenu.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 98vw;
-  height: 80svh;
-  border: 2px solid black;
-  align-self: stretch;
-  display: none;
+  align-self: flex-end;
 }
 
-.show-hidden {
-  display: flex;
-}
-.hide-it {
-  display: none;
+#app > .menuTag > #menuImg {
+  width: 97%;
+  height: auto;
+  padding: 10px;
 }

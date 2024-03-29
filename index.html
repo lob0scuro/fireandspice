@@ -15,18 +15,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Fire & Spice</title>
   </head>
   <body>
-    <header>
-      <a href="tel:+13372639440" id="phoneLink"
-        ><i id="call-btn" class="fa-solid fa-phone"></i
-      ></a>
-      <a href="#"
-        ><img src="images/fslogo.jpg" alt="best crawfish in swla"
-      /></a>
-      <i id="hamburger-btn" class="fa-solid fa-bars"></i>
-    </header>
+    <!--BEGIN header Vue component-->
+    <div id="app1">
+      <header>
+        <a href="tel:+13372639440" id="phoneLink">
+          <i id="call-btn" class="fa-solid fa-phone"></i>
+        </a>
+        <a href="#"
+          ><img src="images/fslogo.jpg" alt="best crawfish in swla"
+        /></a>
+        <button id="hamburger-btn" @click="showNavLinks">
+          <i :class="[navOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars']"></i>
+        </button>
+      </header>
+      <div v-if="navOpen" class="mainMenu">
+        <ul>
+          <li v-for="(text, index) in links.text" :key="index">
+            <a :href="links.sections[index]" @click="showNavLinks"
+              >{{ text }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            navOpen: false,
+            links: {
+              sections: ["#spotlightFood", "#about", "#order-form", "#footer"],
+              text: ["Featured", "About", "Order", "Location"],
+            },
+          };
+        },
+        methods: {
+          showNavLinks() {
+            this.navOpen = !this.navOpen;
+          },
+        },
+      }).mount("#app1");
+    </script>
+    <!--END header Vue component-->
     <main>
       <section id="landing" class="landing">
         <h1 class="text-center">
@@ -83,11 +117,12 @@
         <p class="text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
           vel perspiciatis itaque non consequatur, eaque perferendis mollitia, a
-          dolorum, similique voluptatibus natus illum iure? Nisi, perferendis.
-          Et, quibusdam commodi ipsa doloremque rerum nostrum aliquid eius sunt
-          esse consequuntur nam ipsum maxime hic modi sit excepturi at est
-          delectus ipsam quae.
-          <br /><br />
+          dolorum, perferendis. Et, quibusdam commodi
+          <a href="http://www.eastwoodcares.com/" target="_blank"
+            >Eastwood Pentacostal Church</a
+          >
+          rerum nostrum aliquid eius sunt esse consequuntur nam ipsum maxime hic
+          modi sit excepturi at est delectus ipsam quae. <br /><br />
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, ab,
           consequatur accusamus eaque repudiandae officia quidem animi est
           blanditiis delectus fuga molestiae illo fugiat vel quae ducimus.
@@ -113,15 +148,38 @@
           <input class="btn" type="submit" value="Place Order" />
         </form>
       </section>
-      <div class="menu-tag">
-        <button id="menu-btn" class="menu-btn">Menu</button>
-        <button id="menu-close-btn" class="menu-close-btn">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div id="menu-img" class="menu-img"></div>
+      <!--Begin menutag Vuecomponent-->
+      <div id="app">
+        <div class="menuTag">
+          <button class="menu-btn" @click="showMenu">{{ changeText }}</button>
+          <img id="menuImg" :src="menu" alt="" v-if="shown" />
+        </div>
       </div>
+
+      <script>
+        Vue.createApp({
+          data() {
+            return {
+              menu: "images/fsmenu.jpg",
+              shown: false,
+            };
+          },
+          methods: {
+            showMenu() {
+              this.shown = !this.shown;
+              console.log("sup");
+            },
+          },
+          computed: {
+            changeText() {
+              return this.shown ? "X Close" : "Menu";
+            },
+          },
+        }).mount("#app");
+      </script>
+      <!--End vue component-->
     </main>
-    <footer>
+    <footer id="footer">
       <p class="text-center">
         Fire and Spice - Moss Bluff, LA <br /><small
           >122 N Perkins Ferry Rd, Moss Bluff, LA 70611</small
