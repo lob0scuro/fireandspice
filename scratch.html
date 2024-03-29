@@ -1,25 +1,55 @@
-<head>
-  <style>
-    .menu {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-end;
-      border: 2px solid red;
-    }
-    .menu button {
-      font-size: 1rem;
-    }
-    .menu img {
-      width: 90vw;
-      height: auto;
-      border: 2px solid black;
-    }
-  </style>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .menuTag {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .menuTag button {
+        align-self: flex-end;
+      }
 
-<body>
-  <div class="menu">
-    <button>Menu</button>
-    <img src="images/fsmenu.jpg" alt="" />
-  </div>
-</body>
+      #menuImg {
+        width: 100%;
+        height: auto;
+        border: 1px solid #000;
+        padding: 10px;
+      }
+    </style>
+    <title>fnsScratchpad</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="menuTag">
+        <button @click="showMenu">{{ changeText }}</button>
+        <img id="menuImg" :src="menu" alt="" v-if="shown" />
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            menu: "images/fsmenu.jpg",
+            shown: false,
+          };
+        },
+        methods: {
+          showMenu() {
+            this.shown = !this.shown;
+            console.log("sup");
+          },
+        },
+        computed: {
+          changeText() {
+            return this.shown ? "X" : "Menu";
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
