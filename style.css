@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  height: 100svh;
+  font-family: "Luckiest Guy", cursive;
+  margin: 0 auto;
+  background: #ffdd00;
+}
+
+/*UTILS*/
+.btn {
+  background-color: #ffdd00;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.banner {
+  background-color: #ffdd00;
+  width: 100%;
+  height: 8rem;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.banner-black {
+  background-color: #000;
+}
+.text-banner {
+  width: 100%;
+  height: 60px;
+  background-color: #ffdd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*HEADER*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header i {
+  font-size: 2em;
+  color: #fff;
+}
+
+header img#mainLogo {
+  width: 10em;
+  height: auto;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+#navLinks {
+  display: none;
+}
+
+/*C2A*/
+#c2a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#c2a img#backdrop {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.6);
+}
+
+#c2a .textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  position: absolute;
+  top: 55%;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+#c2a .textBlock button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: -4px 4px 6px -1px rgba(0, 0, 0, 0.8);
+}
+
+/*MENU ITEM*/
+section#menuItems {
+  background-image: url(images/rustic.jpg);
+  background-position: center;
+  background-size: contain;
+  padding: 10% 0;
+}
+
+.cardBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.card {
+  width: 180px;
+  height: 300px;
+  background-color: rgba(200, 200, 200, 0.5);
+}
+.card img {
+  width: 180px;
+  height: 180px;
+  aspect-ratio: 1/1;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+/*VALIDATION*/
+#validation {
+  border-bottom: 8px solid red;
+  border-top: 8px solid red;
+  padding: 10px 0;
+}
+
+#validation img {
+  width: 100%;
+  height: auto;
+}
+
+/*ABOUT*/
+#about {
+  padding: 5%;
+}
+
+#about img {
+  width: 100%;
+  border: 2px solid #fff;
+  box-shadow: -8px 8px 10px -3px rgba(0, 0, 0, 0.8);
+  margin: 15px 0;
+}
+
+#about h3 {
+  text-align: center;
+  font-size: 3.5rem;
+}
+#about h5 {
+  font-size: 2rem;
+  text-align: center;
+  background-color: #000;
+  color: #ffdd00;
+  padding: 5%;
+}
+
+#about p {
+  padding: 5px;
+  text-align: center;
+  letter-spacing: 4px;
+  line-height: 22px;
+}
+
+/*ORDER*/
+#order {
+  text-align: center;
+  padding: 8%;
+  margin: 0 auto;
+}
+#order h3 {
+  font-size: 3rem;
+}
+
+#order form#orderForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 15px;
+  margin: 10px auto;
+  border: 8px solid #000;
+  border-radius: 10px;
+  max-width: fit-content;
+  padding: 8%;
+  background: #801a12;
+  color: #fff;
+  box-shadow: -8px 8px 15px -3px rgba(0, 0, 0, 0.8);
+}
+
+#order form#orderForm input[type="submit"] {
+  font-size: 1.2rem;
+  font-weight: 900;
+  border: none;
+  box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.8);
+  font-family: inherit;
+  padding: 5%;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 8%;
+  text-align: center;
+}
+
+footer address {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+footer iframe {
+  width: 90%;
+  background: #801a12;
+  padding: 8px;
+}
+
+footer .socialMedia {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.socialLinks {
+  font-size: 2rem;
+  letter-spacing: 15px;
+}
+
+/*MENU BUTTON*/
+button.menuButton {
+  font-weight: 900;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 15px 0 0 15px;
+  border-right: none;
+  width: 5rem;
+  position: fixed;
+  z-index: 4;
+  right: 0;
+  bottom: 12%;
+  box-shadow: -4px 4px 8px -1px rgba(0, 0, 0, 0.8);
+}
