@@ -22,14 +22,16 @@
   <body>
     <header>
       <i class="fa-solid fa-phone"></i>
-      <img id="mainLogo" src="images/fslogo.jpg" alt="fire and spice logo" />
-      <i class="fa-solid fa-bars"></i>
+      <a href="#"
+        ><img id="mainLogo" src="images/fslogo.jpg" alt="fire and spice logo"
+      /></a>
+      <i id="navToggler" class="fa-solid fa-bars"></i>
       <nav id="navLinks">
         <ul>
-          <a href="#"><li>Order</li></a>
-          <a href="#"><li>About Us</li></a>
-          <a href="#"><li>Featured</li></a>
-          <a href="#"><li>Find Us</li></a>
+          <a href="#order"><li>Order</li></a>
+          <a href="#about"><li>About Us</li></a>
+          <a href="#menuItems"><li>Featured</li></a>
+          <a href="#footer"><li>Find Us</li></a>
         </ul>
       </nav>
     </header>
@@ -133,7 +135,7 @@
         </form>
       </section>
     </main>
-    <footer>
+    <footer id="footer">
       <address>
         <p>Fire & Spice</p>
         122 N Perkins Ferry Rd, Moss Bluff LA 70611
@@ -155,7 +157,13 @@
         </div>
       </div>
     </footer>
-    <button class="btn menuButton">Menu</button>
+    <button id="openModalButton" class="btn menuButton">
+      <i class="fa-regular fa-file-lines"></i>
+    </button>
+    <dialog id="modal">
+      <button id="closeModalButton" class="closeMenuButton">X</button>
+      <img src="images/fsmenu.jpg" alt="fire and spice moss bluff menu" />
+    </dialog>
   </body>
   <!--import javascript-->
   <script src="main.js"></script>
