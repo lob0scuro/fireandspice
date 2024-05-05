@@ -290,8 +290,8 @@ footer .socialMedia {
 button.menuButton {
   font-weight: 900;
   font-family: inherit;
-  font-size: 1.2rem;
-  padding: 10px;
+  font-size: 1.4rem;
+  padding: 0px;
   border-radius: 15px 0 0 15px;
   border-right: none;
   width: max-content;
@@ -300,6 +300,9 @@ button.menuButton {
   right: 0;
   bottom: 12%;
   box-shadow: -4px 4px 8px -1px rgba(0, 0, 0, 0.8);
+
+  height: 4rem;
+  width: 2.5rem;
 }
 
 /*MODAL*/
@@ -328,8 +331,11 @@ dialog button {
   font-weight: 900;
   color: #801a12;
   padding: 10px;
-  border: none;
-  background-color: transparent;
+  /* border: none; */
+  margin: 4px;
+  padding: 4px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
   font-family: "Luckiest Guy", cursive;
 }
 
