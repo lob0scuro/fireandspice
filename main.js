@@ -1,6 +1,8 @@
 const modal = document.querySelector("dialog#modal");
 const openModalButton = document.getElementById("openModalButton");
 const closeModalButton = document.getElementById("closeModalButton");
+const header = document.getElementById("header");
+let lastScrollY = window.scrollY;
 
 openModalButton.addEventListener("click", () => {
   modal.showModal();
@@ -20,4 +22,16 @@ for (i = 0; i < links.length; i++) {
 }
 navToggler.addEventListener("click", () => {
   navLinks.classList.toggle("navOpen");
+});
+
+window.addEventListener("scroll", () => {
+  if (lastScrollY < window.scrollY) {
+    // code
+    header.classList.add("hideNav");
+  } else {
+    // code
+    header.classList.remove("hideNav");
+  }
+
+  lastScrollY = window.scrollY;
 });

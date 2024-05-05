@@ -5,6 +5,7 @@
 }
 
 body {
+  --nav-height: 150px;
   width: 100%;
   max-width: 800px;
   height: 100vh;
@@ -12,9 +13,17 @@ body {
   font-family: "Luckiest Guy", cursive;
   margin: 0 auto;
   background: #ffdd00;
+  padding-top: var(--nav-height);
+}
+main {
+  transform: translateY(calc(-1 * var(--nav-height)));
 }
 
 /*UTILS*/
+.hideNav {
+  transform: translateY(calc(-1 * var(--nav-height)));
+}
+
 .btn {
   background-color: #ffdd00;
   border: 2px solid #000;
@@ -52,6 +61,7 @@ body {
 
 /*HEADER*/
 header {
+  height: var(--nav-height);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -63,6 +73,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 2;
+  transition: transform 0.3s ease-in-out;
 }
 
 header i {
