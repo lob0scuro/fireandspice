@@ -29,12 +29,14 @@ window.addEventListener("scroll", () => {
   if (lastScrollY < window.scrollY) {
     // code
     header.classList.add("hideNav");
-  } else if (lastScrollY <= 0) {
-    header.classList.remove("hideNav");
   } else {
     // code
     header.classList.remove("hideNav");
   }
 
   lastScrollY = window.scrollY;
+
+  if (window.scrollY <= 0) {
+    header.classList.remove("hideNav");
+  }
 });
