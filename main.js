@@ -26,9 +26,11 @@ navToggler.addEventListener("click", () => {
 
 //hide NavBar function
 window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY && lastScrollY >= 0) {
+  if (lastScrollY < window.scrollY) {
     // code
     header.classList.add("hideNav");
+  } else if (lastScrollY <= 0) {
+    header.classList.remove("hideNav");
   } else {
     // code
     header.classList.remove("hideNav");
